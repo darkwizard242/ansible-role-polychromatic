@@ -12,7 +12,7 @@ services:
   - docker
 
 env:
-  - ROLE_NAME: polychromatic 
+  - ROLE_NAME: polychromatic
 
 addons:
   sonarcloud:
