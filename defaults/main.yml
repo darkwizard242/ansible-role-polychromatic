@@ -1,0 +1,7 @@
+---
+# defaults file for polychromatic
+polychromatic_repo: 'ppa:polychromatic/stable'
+polychromatic_repo_desired_state: present
+polychromatic_repo_filename: polychromatic
+polychromatic_app: polychromatic
+polychromatic_package_desired_state: present
