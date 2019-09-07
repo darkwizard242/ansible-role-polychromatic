@@ -11,6 +11,7 @@ platforms:
     pre_build_image: true
 provisioner:
   name: ansible
+  log: true
   lint:
     name: ansible-lint
 scenario:
