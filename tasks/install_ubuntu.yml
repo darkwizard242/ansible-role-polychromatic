@@ -6,7 +6,7 @@
     name: python-apt
     state: present
     force_apt_get: yes
-    update_cache: no
+    update_cache: yes
 - name: Gather package facts to verify if openrazer is installed as it is a dependency.
   package_facts:
     manager: apt
