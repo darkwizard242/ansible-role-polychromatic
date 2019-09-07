@@ -1,9 +1,9 @@
 ---
 # tasks file for polychromatic - Ubuntu
 
-- name: Install python-apt on Ubuntu systems, required for package_facts.
+- name: Install python3-apt on Ubuntu systems, required for package_facts.
   apt:
-    name: python-apt
+    name: python3-apt
     state: present
     force_apt_get: yes
     update_cache: yes
