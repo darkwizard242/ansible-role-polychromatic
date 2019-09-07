@@ -5,14 +5,17 @@ dist: bionic
 
 language: python
 python:
-  - "3.6"
   - "3.7"
 
 services:
   - docker
 
 env:
-  - ROLE_NAME: polychromatic
+  global:
+    - ROLE_NAME: polychromatic
+  matrix:
+    - DISTRO: ubuntu-18.04
+    - DISTRO: ubuntu-16.04
 
 addons:
   sonarcloud:
