@@ -19,4 +19,5 @@ def test_polychromatic_binary_file(host):
 
 
 def test_polychromatic_binary_which(host):
-    assert host.check_output('which polychromatic-controller') == '/usr/bin/polychromatic-controller'
+    assert host.check_output('which polychromatic-controller') \
+    == '/usr/bin/polychromatic-controller'
