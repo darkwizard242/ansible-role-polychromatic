@@ -1,6 +1,5 @@
 ---
-sudo: required
-
+os: linux
 dist: bionic
 
 language: python
@@ -13,7 +12,7 @@ services:
 env:
   global:
     - ROLE_NAME: polychromatic
-  matrix:
+  jobs:
     - DISTRO: ubuntu-18.04
     - DISTRO: ubuntu-16.04
 
@@ -22,7 +21,8 @@ addons:
     organization: "tech-overlord-github"
 
 before_install:
-  - sudo apt-get -qq update
+  - sudo apt-get update
+  - sudo apt-get upgrade -y
 
 install:
   - pip3 install molecule docker
