@@ -2,7 +2,7 @@
 
 # Ansible Role: polychromatic
 
-Role to install (_by default_) `polychromatic` package or uninstall (_if passed as var_) on **Ubuntu** systems. [Polychromatic](https://github.com/polychromatic/polychromatic) is a frontend for customizing the functionality of Razer peripherials under GNU/Linux.
+Role to install (_by default_) polychromatic package or uninstall (_if passed as var_) on **Ubuntu** systems. [Polychromatic](https://polychromatic.app) is a frontend applicationfor customizing the functionality of Razer peripherials under GNU/Linux.
 
 ## Requirements
 
@@ -43,7 +43,7 @@ For default behaviour of role (i.e. installation of **polychromatic** package) i
 ```yaml
 - hosts: servers
   roles:
-    - role: darkwizard242.polychromatic
+    - darkwizard242.polychromatic
 ```
 
 For customizing behavior of role (i.e. installation of latest **polychromatic** package) in ansible playbooks.
@@ -51,9 +51,9 @@ For customizing behavior of role (i.e. installation of latest **polychromatic** 
 ```yaml
 - hosts: servers
   roles:
-    - role: darkwizard242.polychromatic
-      vars:
-        polychromatic_package_desired_state: latest
+    - darkwizard242.polychromatic
+  vars:
+    polychromatic_package_desired_state: latest
 ```
 
 For customizing behavior of role (i.e. un-installation of **polychromatic** package) in ansible playbooks.
@@ -61,9 +61,9 @@ For customizing behavior of role (i.e. un-installation of **polychromatic** pack
 ```yaml
 - hosts: servers
   roles:
-    - role: darkwizard242.polychromatic
-      vars:
-        polychromatic_package_desired_state: absent
+    - darkwizard242.polychromatic
+  vars:
+    polychromatic_package_desired_state: absent
 ```
 
 ## License
