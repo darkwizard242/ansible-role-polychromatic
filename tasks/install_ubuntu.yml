@@ -7,23 +7,23 @@
     state: present
     force_apt_get: yes
     update_cache: yes
-- name: Gather package facts to verify if openrazer is installed as it is a dependency.
-  package_facts:
-    manager: apt
-- name: Add openrazer repo if it is not in installed state on Ubuntu systems. Dependency of polychromatic.
+# - name: Gather package facts to verify if openrazer is installed as it is a dependency.
+#   package_facts:
+#     manager: apt
+- name: Add openrazer repo on Ubuntu systems. Dependency of polychromatic.
   apt_repository:
     repo: 'ppa:openrazer/stable'
     state: present
     filename: openrazer
     codename: "{{ ansible_lsb['codename'] }}"
     update_cache: yes
-  when: packages['openrazer-meta'] is not defined
-- name: Install openrazer if currently not in installed state on Ubuntu systems.
+  # when: packages['openrazer-meta'] is not defined
+- name: Install openrazer on Ubuntu systems.
   apt:
     name: openrazer-meta
     state: present
     force_apt_get: yes
-  when: packages['openrazer-meta'] is not defined
+  # when: packages['openrazer-meta'] is not defined
 - name: Adding repository {{ polychromatic_repo }} on Ubuntu systems
   apt_repository:
     repo: "{{ polychromatic_repo }}"
