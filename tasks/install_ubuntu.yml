@@ -1,16 +1,18 @@
 ---
-# tasks file for polychromatic - Ubuntu
+# tasks file for polychromatic - Ubuntu OS
 
-- name: Install python3-apt on Ubuntu systems, required for package_facts.
+- name: Ubuntu OS | Install python3-apt, required for package_facts.
   apt:
     name: python3-apt
     state: present
     force_apt_get: yes
     update_cache: yes
-# - name: Gather package facts to verify if openrazer is installed as it is a dependency.
+
+# - name: Ubuntu OS | Gather package facts to verify if openrazer is installed as it is a dependency.
 #   package_facts:
 #     manager: apt
-- name: Add openrazer repo on Ubuntu systems. Dependency of polychromatic.
+
+- name: Ubuntu OS | Add openrazer repos. Dependency of polychromatic.
   apt_repository:
     repo: 'ppa:openrazer/stable'
     state: present
@@ -18,20 +20,23 @@
     codename: "{{ ansible_lsb['codename'] }}"
     update_cache: yes
   # when: packages['openrazer-meta'] is not defined
-- name: Install openrazer on Ubuntu systems.
+
+- name: Ubuntu OS | Install openrazer-meta
   apt:
     name: openrazer-meta
     state: present
     force_apt_get: yes
   # when: packages['openrazer-meta'] is not defined
-- name: Adding repository {{ polychromatic_repo }} on Ubuntu systems
+
+- name: Ubuntu OS | Adding repository {{ polychromatic_repo }}
   apt_repository:
     repo: "{{ polychromatic_repo }}"
     state: "{{ polychromatic_repo_desired_state }}"
     filename: "{{ polychromatic_repo_filename }}"
     codename: "{{ ansible_lsb['codename'] }}"
     update_cache: yes
-- name: Installing {{ polychromatic_app }} on Ubuntu systems
+
+- name: Ubuntu OS | Installing {{ polychromatic_app }}
   apt:
     name: "{{ polychromatic_app }}"
     state: "{{ polychromatic_package_desired_state }}"
