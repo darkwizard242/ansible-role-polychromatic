@@ -19,14 +19,14 @@
     filename: openrazer
     codename: "{{ ansible_lsb['codename'] }}"
     update_cache: yes
-  # when: packages['openrazer-meta'] is not defined
+    # when: packages['openrazer-meta'] is not defined
 
 - name: Ubuntu OS | Install openrazer-meta
   apt:
     name: openrazer-meta
     state: present
     force_apt_get: yes
-  # when: packages['openrazer-meta'] is not defined
+    # when: packages['openrazer-meta'] is not defined
 
 - name: Ubuntu OS | Adding repository {{ polychromatic_repo }}
   apt_repository:
