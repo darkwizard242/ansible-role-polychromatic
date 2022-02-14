@@ -24,13 +24,13 @@ polychromatic_package_desired_state: present
 
 ### Variables table:
 
-Variable                            | Value (default)            | Description
------------------------------------ | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------
-polychromatic_repo                  | 'ppa:polychromatic/stable' | Refers to the ppa repo to add.
-polychromatic_repo_desired_state    | present                    | Defined to dynamically chose whether to add/keep (i.e. `present`) or remove (i.e. `absent`) the repository file list from `/etc/apt/sources.list.d`.
-polychromatic_repo_filename         | polychromatic              | Defined to set the repository file name for saving in `/etc/apt/sources.list.d`
-polychromatic_app                   | polychromatic-meta         | Defines the app to install i.e. **polychromatic-meta**
-polychromatic_package_desired_state | present                    | Defined to dynamically chose whether to install (i.e. either `present` or `latest`) or uninstall (i.e. `absent`) the package. Default is set to `present`.
+Variable                            | Description
+----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------
+polychromatic_repo                  | Refers to the ppa repo to add.
+polychromatic_repo_desired_state    | Defined to dynamically chose whether to add/keep (i.e. `present`) or remove (i.e. `absent`) the repository file list from `/etc/apt/sources.list.d`.
+polychromatic_repo_filename         | Defined to set the repository file name for saving in `/etc/apt/sources.list.d`
+polychromatic_app                   | Defines the app to install i.e. **polychromatic-meta**
+polychromatic_package_desired_state | Defined to dynamically chose whether to install (i.e. either `present` or `latest`) or uninstall (i.e. `absent`) the package. Default is set to `present`.
 
 ## Dependencies
 
@@ -72,4 +72,4 @@ For customizing behavior of role (i.e. un-installation of **polychromatic** pack
 
 ## Author Information
 
-This role was created by [Ali Muhammad](https://www.linkedin.com/in/ali-muhammad-759791130/).
+This role was created by [Ali Muhammad](https://www.alimuhammad.dev/).
