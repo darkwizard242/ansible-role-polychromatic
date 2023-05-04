@@ -67,6 +67,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install python3-setuptools -y
+        pwd && ls
         pip3 install -U -r requirements.txt
 
     - name: Execute Molecule test of role for ${{ matrix.IMAGE }}
