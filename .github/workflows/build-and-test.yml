@@ -69,6 +69,8 @@ jobs:
         sudo apt-get install python3-setuptools -y
         pwd && ls
         pip3 install -U -r requirements.txt
+      with:
+        path: 'darkwizard242.polychromatic'
 
     - name: Execute Molecule test of role for ${{ matrix.IMAGE }}
       working-directory: 'darkwizard242.polychromatic'
